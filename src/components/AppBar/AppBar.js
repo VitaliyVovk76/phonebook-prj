@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
+import Container from "../Container";
 import Navigation from "../Navigation";
 import UserMenu from "../UserMenu";
 import AuthNav from "../AuthNav";
@@ -16,15 +17,17 @@ const AppBar = () => {
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </header>
-      <Suspense
-        fallback={
-          <div>
-            <Loader />
-          </div>
-        }
-      >
-        <Outlet />
-      </Suspense>
+      <Container>
+        <Suspense
+          fallback={
+            <div>
+              <Loader />
+            </div>
+          }
+        >
+          <Outlet />
+        </Suspense>
+      </Container>
     </>
   );
 };

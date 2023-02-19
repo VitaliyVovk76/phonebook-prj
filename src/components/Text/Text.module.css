@@ -1,0 +1,21 @@
+.title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.large {
+  composes: title;
+  font-size: 34px;
+}
+
+.medium {
+  composes: title;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.small{
+  composes: title;
+  font-size: 20px;
+  margin: 0; 
+}

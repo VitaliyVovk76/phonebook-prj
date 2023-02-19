@@ -1,8 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useEffect, lazy } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-import Container from "./components/Container";
 import AppBar from "./components/AppBar";
 import userOperations from "./redux/user/user-operations";
 import userSeletors from "./redux/user/user-selectors";
@@ -23,7 +21,7 @@ function App() {
     dispatch(userOperations.fetchCurrentUser());
   }, [dispatch]);
   return (
-    <Container>
+    <>
       {!isFetchingCurrentUser && (
         <Routes>
           <Route element={<AppBar />}>
@@ -72,7 +70,7 @@ function App() {
           </Route>
         </Routes>
       )}
-    </Container>
+    </>
   );
 }
 

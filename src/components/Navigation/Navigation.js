@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import NavLinkHeader from "../NavLinkHeader/NavLinkHeader";
 import { useSelector } from "react-redux";
 import userSelectors from "../../redux/user/user-selectors";
 
@@ -7,8 +7,8 @@ const Navigation = () => {
   return (
     <div>
       <nav>
-        <NavLink to="/">About</NavLink>
-        {isLoggedIn && <NavLink to="contacts">Contacts</NavLink>}
+        <NavLinkHeader to="/" text="About" />
+        {isLoggedIn && <NavLinkHeader to="contacts" text="Contacts" />}
       </nav>
     </div>
   );

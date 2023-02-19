@@ -1,21 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 import contactsOperations from "./contacts-operations";
 
+export const Status = {
+  IDLE: "idle",
+  PENDING: "pending",
+  RESOLVED: "resolved",
+  REJECTED: "rejected",
+};
+
 const initialState = {
   items: [],
-  isLoading: false,
+  status: Status.IDLE,
   error: null,
 };
 
-const hendlePending = (state) => (state.isLoading = true);
+const hendlePending = (state) => (state.status = Status.PENDING);
 
 const hendleRejected = (state, action) => {
-  state.isLoading = false;
+  state.status = Status.REJECTED;
   state.error = action.payload;
 };
 
 const hendleSuccess = (state) => {
-  state.isLoading = false;
+  state.status = Status.RESOLVED;
   state.error = null;
 };
 
@@ -66,7 +73,12 @@ const contactsSlice = createSlice({
         hendlePending(state);
       })
       //update
-      .addCase(contactsOperations.updateContact.fulfilled, (state) => {
+      .addCase(contactsOperations.updateContact.fulfilled, (state, action) => {
+        const updatedElem = state.items.find(
+          (item) => item.id === action.payload.id
+        );
+        updatedElem.name = action.payload.name;
+        updatedElem.number = action.payload.number;
         hendleSuccess(state);
       })
       .addCase(contactsOperations.updateContact.rejected, (state, action) => {
