@@ -7,8 +7,8 @@ import s from "./ContactsList.module.css";
 import Title from "../Text";
 import Loader from "../Loader";
 import LoaderContainer from "../LoaderContainer/LoaderContainer";
-import NavLinkPage from "../NavLinkPage";
 import Text from "../Text";
+import ContactCard from "../ContactCard/ContactCard";
 
 import contactsSelectors from "../../redux/contacts/contacts-selectors";
 
@@ -37,11 +37,11 @@ const ContactList = () => {
         <ul className={s.contactList}>
           {contacts.map(({ id, name, number }) => (
             <li className={s.item} key={id}>
-              <Text text={`${name} : ${number}`} id="small" />
-              <NavLinkPage
-                to={`/contacts/${id}`}
-                text="View"
-                state={{ from: location, contactId: id }}
+              <ContactCard
+                name={name}
+                number={number}
+                id={id}
+                location={location}
               />
             </li>
           ))}
