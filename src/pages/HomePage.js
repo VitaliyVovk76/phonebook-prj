@@ -11,6 +11,10 @@ const HomePage = () => {
         get personal contacts notebook. Phone book can be accessed from desctop
         device and any browsers.
       </p>
+      <p>
+        Registration format: <br /> - name must be unique <br /> - e-mail as
+        *****@gmail.com <br /> - password must be at least 8 characters long
+      </p>
       <p>In this application I had used following framework and libraries:</p>
       <ul>
         <li>React</li>

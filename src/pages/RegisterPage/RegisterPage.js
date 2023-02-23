@@ -6,17 +6,6 @@ import userOperations from "../../redux/user/user-operations";
 import Button from "../../components/Button";
 import s from "./RegisterPage.module.css";
 
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: "flex",
-    flexDirection: "column",
-    marginBottom: 15,
-  },
-};
-
 const RegisterPage = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
@@ -53,12 +42,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className={s.form}
-      style={styles.form}
-      autoComplete="off"
-    >
+    <form className={s.form} onSubmit={handleSubmit} autoComplete="off">
       <input
         className={s.input}
         type="text"
