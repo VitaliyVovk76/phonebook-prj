@@ -18,6 +18,7 @@ const HomePage = () => {
         <li>React-router-dom</li>
         <li>React-persist</li>
         <li>Axios</li>
+        <li>Custom components</li>
       </ul>
     </>
   );

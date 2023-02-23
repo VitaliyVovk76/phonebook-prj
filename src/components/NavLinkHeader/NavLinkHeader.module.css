@@ -1,24 +1,19 @@
-:root{
-    --regular-color: #2a363b;
-    --active-color:#e84a5f;
-    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .link{
     display: inline-block;
   text-decoration: none;
   padding: 12px;
   font-weight: 700;
-  color: var(--regular-color);
-  transition: var(--transition)
+  color: var(--link-regular-color);
+  transition: var(--transition);
+   transition: color var(--transition);
 }
 
 .link:hover,
 .link:focus {
-  color: var(--active-color)
+  color: var(--link-active-color);
 }
 
 .activeLink {
     composes: link;
-  color: var(--active-color)
+  color: var(--link-active-color)
 }

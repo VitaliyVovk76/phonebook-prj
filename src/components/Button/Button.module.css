@@ -1,13 +1,7 @@
-:root{
-    --delet-bgr-color:red;
-    --uplate-bgr-color: yellow;
-    --create-bgr-color: green;
-    --transition: cubic-bezier(0.4, 0, 0.2, 1)
-}
+
 
 .button{
     display: inline-block;
-    color: var(--regula-color);
     text-align: center;
     padding: 4px;
     font-size: 14px;
@@ -15,7 +9,7 @@
      cursor: pointer;
     border-color: transparent;
     opacity: 0.6;
-    transition: opacity 0.3s var(--transition);
+    transition: opacity var(--transition);
     
 }
 
@@ -26,14 +20,14 @@
 
 .delete{
     composes: button;
-    background-color: var(--delet-bgr-color);
+    background-color: var(--btn-delet-color);
 }
 
 .create{
     composes:button;
-    background-color: var(--create-bgr-color);
+    background-color: var(--btn-create-color);
 }
 
 .update{
     composes:button;
-    background-color: var(--uplate-bgr-color);}
+    background-color: var(--btn-uplate-color);}

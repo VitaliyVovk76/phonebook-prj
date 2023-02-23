@@ -1,6 +1,16 @@
 
 @import-normalize;
 
+:root{
+    --btn-delet-color:#ff0000;
+    --btn-uplate-color: #ffff00;
+    --btn-create-color: #008000;
+    --link-regular-color: #2a363b;
+    --link-active-color:#e84a5f;
+    --link-page-color:#2196f3;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);  
+}
+
 body {
   box-sizing: border-box;
   background-repeat: no-repeat;

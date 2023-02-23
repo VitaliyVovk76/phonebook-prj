@@ -9,9 +9,6 @@ const UserMenu = () => {
   return (
     <div>
       <span className={s.name}>Welcom, {name}</span>
-      {/* <button type="button" onClick={() => dispatch(userOperations.logOut())}>
-        Log Out
-      </button> */}
       <Button
         type="button"
         onClick={() => dispatch(userOperations.logOut())}

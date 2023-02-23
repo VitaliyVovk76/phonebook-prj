@@ -16,6 +16,7 @@ const Filter = () => {
           className={s.input}
           type="text"
           value={value}
+          placeholder="Enter the name of contact you are looking for"
           onChange={(e) => dispatch(changeFilter(e.target.value))}
         />
       </div>

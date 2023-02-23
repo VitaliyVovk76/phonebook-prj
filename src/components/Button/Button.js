@@ -10,7 +10,7 @@ const Button = ({ text, onClick, id, type }) => {
   );
 };
 
-Button.ropTypes = {
+Button.propTypes = {
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,

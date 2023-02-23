@@ -2,18 +2,9 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
-import userOperations from "../redux/user/user-operations";
-
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: "flex",
-    flexDirection: "column",
-    marginBottom: 15,
-  },
-};
+import userOperations from "../../redux/user/user-operations";
+import Button from "../../components/Button/Button";
+import s from "./LoginPage.module.css";
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -47,33 +38,27 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <h2>Login page</h2>
+    <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
+      <input
+        className={s.input}
+        type="email"
+        name="email"
+        value={email}
+        placeholder="E-mail"
+        onChange={handleChange}
+      />
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Почта
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
+      <input
+        className={s.input}
+        type="password"
+        name="password"
+        value={password}
+        placeholder="Password"
+        onChange={handleChange}
+      />
 
-        <label style={styles.label}>
-          Пароль
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-
-        <button type="submit">Войти</button>
-      </form>
-    </div>
+      <Button type="submit" text="Log in" id="create" />
+    </form>
   );
 };
 

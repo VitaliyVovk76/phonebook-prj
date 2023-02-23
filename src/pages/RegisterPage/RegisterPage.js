@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import { register } from "../redux/user/user-operations";
-import userOperations from "../redux/user/user-operations";
+import userOperations from "../../redux/user/user-operations";
+import Button from "../../components/Button";
+import s from "./RegisterPage.module.css";
 
 const styles = {
   form: {
@@ -52,38 +53,41 @@ const RegisterPage = () => {
   };
 
   return (
-    <div>
-      <h2>RegisterPage</h2>
+    <form
+      onSubmit={handleSubmit}
+      className={s.form}
+      style={styles.form}
+      autoComplete="off"
+    >
+      <input
+        className={s.input}
+        type="text"
+        name="name"
+        value={name}
+        placeholder="Name"
+        onChange={handleChange}
+      />
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Имя
-          <input type="text" name="name" value={name} onChange={handleChange} />
-        </label>
+      <input
+        className={s.input}
+        type="email"
+        name="email"
+        value={email}
+        placeholder="E-mail"
+        onChange={handleChange}
+      />
 
-        <label style={styles.label}>
-          Почта
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
+      <input
+        className={s.input}
+        type="password"
+        name="password"
+        value={password}
+        placeholder="Password"
+        onChange={handleChange}
+      />
 
-        <label style={styles.label}>
-          Пароль
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-
-        <button type="submit">Зарегистрироваться</button>
-      </form>
-    </div>
+      <Button type="submit" text="Registration" id="create" />
+    </form>
   );
 };
 
