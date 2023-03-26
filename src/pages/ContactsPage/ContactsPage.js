@@ -12,7 +12,7 @@ const ContactsPage = () => {
   const toggleModal = () => setShowModal((state) => !state);
 
   return (
-    <>
+    <div className={s.pageWrapper}>
       <Title text="Phonebook" id="large" />
       <div className={s.btnWrapper}>
         <Button
@@ -30,7 +30,7 @@ const ContactsPage = () => {
 
       <Filter />
       <ContactsList />
-    </>
+    </div>
   );
 };
 

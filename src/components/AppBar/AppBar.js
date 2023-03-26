@@ -13,10 +13,15 @@ const AppBar = () => {
   const isLoggedIn = useSelector(userSelectors.getIsLoggedIn);
   return (
     <>
-      <header className={s.header}>
-        <Navigation />
-        {isLoggedIn ? <UserMenu /> : <AuthNav />}
-      </header>
+      <div className={s.wrapper}>
+        <Container>
+          <header className={s.header}>
+            <Navigation />
+            {isLoggedIn ? <UserMenu /> : <AuthNav />}
+          </header>
+        </Container>
+      </div>
+
       <Container>
         <Suspense
           fallback={

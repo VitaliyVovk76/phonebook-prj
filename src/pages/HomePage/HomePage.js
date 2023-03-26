@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import Title from "../../components/Text";
+import s from "./HomePage.module.css";
 
 const HomePage = () => {
   return (
-    <>
-      <h1>Phonebook</h1>
+    <div className={s.wrapper}>
+      <Title text="Phonebook" id="large" />
       <p>
         Simple study web app to store contacts in a cloud.{" "}
         <Link to="/register">Register</Link> your account or{" "}
@@ -13,7 +15,11 @@ const HomePage = () => {
       </p>
       <p>
         Registration format: <br /> - name must be unique <br /> - e-mail as
-        *****@gmail.com <br /> - password must be at least 8 characters long
+        *****@*****.*** <br /> - password must be at least 8 characters long
+      </p>
+      <p>
+        Registration data example: <br /> - name: svinka3 <br /> - e-mail:
+        svinka3@gmail.com <br /> - password: svinka3svinka3
       </p>
       <p>In this application I had used following framework and libraries:</p>
       <ul>
@@ -24,7 +30,7 @@ const HomePage = () => {
         <li>Axios</li>
         <li>Custom components</li>
       </ul>
-    </>
+    </div>
   );
 };
 
